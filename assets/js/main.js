@@ -5,68 +5,66 @@
             Navbar Area
     :::::::::::::::::::::::::::::::::::*/
 
-// Navbar Sticky
-$(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 1) {
-        $(".navbar").addClass("bg-primari");
-    } else {
-        $(".navbar").removeClass("bg-primari");
-    }
-});
+    // Navbar Sticky
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 1) {
+            $(".navbar").addClass("bg-primari");
+        } else {
+            $(".navbar").removeClass("bg-primari");
+        }
+    });
 
-// Navbar Link Active State on Click
-const navbarLinks = document.querySelectorAll('#navbarLinks .nav-link');
-navbarLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        navbarLinks.forEach(item => item.parentElement.classList.remove('active'));
-        this.parentElement.classList.add('active');
-    }); 
-});
+    // Navbar Link Active State on Click
+    const navbarLinks = document.querySelectorAll('#navbarLinks .nav-link');
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navbarLinks.forEach(item => item.parentElement.classList.remove('active'));
+            this.parentElement.classList.add('active');
+        }); 
+    });
 
-/// Active Link on Scroll
-$(window).on('scroll', function () {
-    var position = $(this).scrollTop();
+    // Active Link on Scroll
+    $(window).on('scroll', function () {
+        var position = $(this).scrollTop();
 
-    $('section').each(function () {
-        var target = $(this).offset().top - 100; // Adjust offset for smoother activation
-        var id = $(this).attr('id');
+        $('section').each(function () {
+            var target = $(this).offset().top - 100; // Adjust offset for smoother activation
+            var id = $(this).attr('id');
 
-        if (position >= target) {
-            // Remove 'active' class from all links
+            if (position >= target) {
+                // Remove 'active' class from all links
+                navbarLinks.forEach(link => {
+                    link.parentElement.classList.remove('active');
+                });
+                // Add 'active' class to the link corresponding to the section in view
+                $(`#navbarLinks a[href="#${id}"]`).parent().addClass('active');
+            }
+        });
+
+        // Handle edge case for home section (when at top of the page)
+        if (position === 0) {
             navbarLinks.forEach(link => {
                 link.parentElement.classList.remove('active');
             });
-            // Add 'active' class to the link corresponding to the section in view
-            $(`#navbarLinks a[href="#${id}"]`).parent().addClass('active');
+            $('#navbarLinks a[href="#home"]').parent().addClass('active');
         }
     });
 
-    // Handle edge case for home section (when at top of the page)
-    if (position === 0) {
-        navbarLinks.forEach(link => {
-            link.parentElement.classList.remove('active');
-        });
-        $('#navbarLinks a[href="#home"]').parent().addClass('active');
-    }
-});
-
-$(document).ready(function () {
     // Smooth scroll on click
-    $('.nav-link').on('click', function (event) {
-        var $anchor = $(this);
-        var targetElement = $($anchor.attr('href'));
+    $(document).ready(function () {
+        $('.nav-link').on('click', function (event) {
+            var $anchor = $(this);
+            var targetElement = $($anchor.attr('href'));
 
-        if (targetElement.length) {
-            $('html, body').stop().animate({
-                scrollTop: targetElement.offset().top - $('.navbar').outerHeight() // Adjust scroll position based on navbar height
-            }, 1000);
-            event.preventDefault();
-        }
+            if (targetElement.length) {
+                $('html, body').stop().animate({
+                    scrollTop: targetElement.offset().top - $('.navbar').outerHeight() // Adjust scroll position based on navbar height
+                }, 1000);
+                event.preventDefault();
+            }
+        });
     });
-});
-
-    
 
     /*==========================
         Hero Area Slider
@@ -96,10 +94,9 @@ $(document).ready(function () {
             autoplay: true
         });
     });
-    
 
     /*::::::::::::::::::::::::::::::::::::
-       project Section
+       Project Section
     ::::::::::::::::::::::::::::::::::::*/
     lightbox.option({
         'imageFadeDuration': 800,
@@ -115,14 +112,13 @@ $(document).ready(function () {
         $('.preloader').fadeOut();
     });
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+    // Carousel functionality
+    document.addEventListener('DOMContentLoaded', () => {
         const carousel = document.querySelector('.carousel');
         const prevButton = document.querySelector('.wrapper i:first-child');
         const nextButton = document.querySelector('.wrapper i:last-child');
-        const zoomOverlay = document.querySelector('.zoom-overlay');
-        const zoomedImage = document.getElementById('zoomedImage');
-    
-        if (!carousel || !prevButton || !nextButton || !zoomOverlay || !zoomedImage) {
+
+        if (!carousel || !prevButton || !nextButton) {
             console.error('One or more essential elements are missing in the DOM.');
             return;
         }
@@ -175,21 +171,6 @@ $(document).ready(function () {
 
         // Initial visibility check for buttons
         updateButtonsVisibility();
-
-        // Handle image click to zoom in
-        carousel.addEventListener('click', (event) => {
-            if (event.target.tagName === 'IMG') {
-                zoomedImage.src = event.target.src;
-                zoomOverlay.style.display = 'flex';
-            }
-        });
-
-        // Close the zoom overlay when clicking outside the image
-        zoomOverlay.addEventListener('click', (event) => {
-            if (event.target === zoomOverlay) {
-                zoomOverlay.style.display = 'none';
-            }
-        });
     });
 
 }(jQuery));
