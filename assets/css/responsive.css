@@ -290,44 +290,6 @@
     }
 
     /*::::::::::::::::::::::::::::::::::::
-       Service Section
-    ::::::::::::::::::::::::::::::::::::*/
-    .service-area::before {
-        height: 100%;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Frequently asked questions
-    ::::::::::::::::::::::::::::::::::::*/
-    .faq-content {
-        margin-top: 15px;
-    }
-    /*::::::::::::::::::::::::::::::::::::
-       Call to Action Area
-    ::::::::::::::::::::::::::::::::::::*/
-    .cta-button {
-        text-align: left;
-        margin-top: 15px;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Team Section
-    ::::::::::::::::::::::::::::::::::::*/
-    .single-team {
-        width: 300px;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-    /*::::::::::::::::::::::::::::::::::::
-       Pricing Area
-    ::::::::::::::::::::::::::::::::::::*/
-    .single-price-box {
-        width: 300px;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
        Contact Area 
     ::::::::::::::::::::::::::::::::::::*/
     .contact-form {

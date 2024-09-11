@@ -4,6 +4,20 @@ body {
     height: 100%;
 }
 
+@media (max-width: 768px) {
+    section {
+        min-height: 100vh; /* Ensure section takes full screen on mobile */
+    }
+}
+
+
+section {
+    min-height: 100vh; /* Full screen height */
+    overflow: hidden; /* Ensure no overflow */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+
 p {
     font-family: 'coughymachine', sans-serif;
     font-size: 18px;

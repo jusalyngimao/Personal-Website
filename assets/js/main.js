@@ -51,20 +51,20 @@
         }
     });
 
-    // Smooth scroll on click
     $(document).ready(function () {
         $('.nav-link').on('click', function (event) {
             var $anchor = $(this);
             var targetElement = $($anchor.attr('href'));
-
+    
             if (targetElement.length) {
                 $('html, body').stop().animate({
                     scrollTop: targetElement.offset().top - $('.navbar').outerHeight() // Adjust scroll position based on navbar height
-                }, 1000);
+                }, 1000); // Smooth scrolling to the section
                 event.preventDefault();
             }
         });
     });
+    
 
     /*==========================
         Hero Area Slider
