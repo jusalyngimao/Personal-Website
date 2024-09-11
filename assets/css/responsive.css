@@ -39,27 +39,6 @@
     .about-content {
         margin-top: 30px;
     }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Service Section
-    ::::::::::::::::::::::::::::::::::::*/
-    .service-area::before {
-        height: 100%;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Frequently asked questions
-    ::::::::::::::::::::::::::::::::::::*/
-    .faq-content {
-        margin-top: 15px;
-    }
-    /*::::::::::::::::::::::::::::::::::::
-       Call to Action Area
-    ::::::::::::::::::::::::::::::::::::*/
-    .cta-button {
-        text-align: left;
-        margin-top: 15px;
-    }
 }
 
 /* Mobile Layout: 320px. */
@@ -114,15 +93,6 @@
     }
 
     /*::::::::::::::::::::::::::::::::::::
-       Featured Area
-    ::::::::::::::::::::::::::::::::::::*/
-    .single-featured-item-wrap h3 {
-        font-size: 20px;
-    }
-    .featured-icon {
-        font-size: 40px;
-    }
-    /*::::::::::::::::::::::::::::::::::::
        Portfolio Section
     ::::::::::::::::::::::::::::::::::::*/
     .work-list ul li {
@@ -143,84 +113,6 @@
     }
     .about-content h4 {
         font-size: 16px;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Service Section
-    ::::::::::::::::::::::::::::::::::::*/
-    .service-area::before {
-        height: 100%;
-
-    }
-
-    .single-service h2 {
-        font-size: 24px;
-    }
-
-    .service-icon {
-        font-size: 45px;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Frequently asked questions
-    ::::::::::::::::::::::::::::::::::::*/
-    .faq-content {
-        margin-top: 15px;
-    }
-    .single-faq h4 {
-        padding-right: 60px;
-        font-size: 16px;
-    }
-
-
-    /*::::::::::::::::::::::::::::::::::::
-       Blog Section
-    ::::::::::::::::::::::::::::::::::::*/
-    h4.blog-title {
-        font-size: 16px;
-    }
-    /*::::::::::::::::::::::::::::::::::::
-       Call to Action Area
-    ::::::::::::::::::::::::::::::::::::*/
-    .cta-button {
-        text-align: left;
-        margin-top: 15px;
-    }
-
-
-
-    /*::::::::::::::::::::::::::::::::::::
-       Why choose Me Section
-    ::::::::::::::::::::::::::::::::::::*/
-    .single-why-me h4 {
-        font-size: 20px;
-    }
-    .why-me-right .why-me-icon,
-    .why-me-left .why-me-icon {
-        position: relative;
-        height: 100px;
-    }
-    .single-why-me.why-me-right,
-    .single-why-me {
-        padding: 0;
-        text-align: center;
-    }
-
-    /*::::::::::::::::::::::::::::::::::::
-       Team Section
-    ::::::::::::::::::::::::::::::::::::*/
-    .single-team {
-        max-width: 300px;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-    /*::::::::::::::::::::::::::::::::::::
-       Pricing Area
-    ::::::::::::::::::::::::::::::::::::*/
-    .single-price-box {
-        max-width: 300px;
-        margin: auto;
-        margin-bottom: 30px;
     }
 
     /*::::::::::::::::::::::::::::::::::::
