@@ -848,7 +848,7 @@ button:focus {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 90%;
     height: 100%;
     background: #123f24;
     border: white;
