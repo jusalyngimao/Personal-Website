@@ -4,23 +4,9 @@ body {
     height: 100%;
 }
 
-@media (max-width: 768px) {
-    section {
-        min-height: 100vh; 
-    }
-}
-
-
-section {
-    min-height: 100vh; 
-    overflow: hidden; 
-    scroll-behavior: smooth; 
-}
-
-
 p {
-    font-family: 'Wix Madefor Display', sans-serif;
-    font-size: 18px;
+    font-family: 'coughymachine', sans-serif;
+    font-size: 16px;
     line-height: 26px;
     color: #000;
     margin: 0;
@@ -42,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Wix Madefor Display', sans-serif;
+    font-family: 'coughymachine', sans-serif;
     color: #000;
     font-weight: 600;
     line-height: 1.7;
@@ -69,14 +55,14 @@ img {
     border: 2px solid;
     padding: 10px 20px;
     background-color: transparent;
-    position: relative; 
-    z-index: 10; 
-    transition: all 0.3s ease; 
+    position: relative; /* Default behavior */
+    z-index: 10; /* Ensure it stays on top of other elements */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .button:hover {
     color: #000;
-    background-color: #123f24;
+    background-color: #123f24; /* Adding background on hover for better visibility */
 }
 
 .bg-a {
@@ -104,7 +90,7 @@ img {
 }
 
 .bg-primari {
-    background-color: #123f24 !important;
+    background-color: #000 !important;
 }
 
 .bg-secondary {
@@ -115,13 +101,14 @@ button:focus {
     outline: none;
 }
 
+/* New Additions for Fixing Button */
 .button.fixed-button {
-    position: fixed;
-    bottom: 20px; 
-    right: 20px; 
-    background-color: #459665; 
+    position: fixed; /* This makes the button stay fixed on the screen */
+    bottom: 20px; /* Positioning 20px from the bottom */
+    right: 20px; /* Positioning 20px from the right */
+    background-color: #123f24; /* You can adjust this color as needed */
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
 }
 
 /* Responsive Media Query */
@@ -129,80 +116,50 @@ button:focus {
     .button.fixed-button {
         bottom: 10px;
         right: 10px;
-        padding: 8px 15px; 
+        padding: 8px 15px; /* Adjust padding for smaller screens */
     }
 }
 
+/* Contact Section Styles */
 #contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 50px 0;
-    background-color: transparent;
+    background-color: #f8f9fa; /* Light background for contact section */
+    padding: 60px 0;
 }
 
 .section-title h2 {
-    font-size: 3.5rem;
-    color:  #1f693d;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .section-title p {
-    color: #555;
-    margin-bottom: 30px;
+    font-size: 16px;
+    color: #3b3e41;
 }
 
-/* Social Media Icons and Links */
-.contact__social {
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
-    flex-wrap: wrap;
+.social-aria {
+    margin-top: 20px;
 }
 
-.contact__social-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color:  #123f24; 
-    transition: color 0.3s ease, transform 0.3s ease;
+.social-aria a {
+    color: #464b50; /* Default icon color */
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
 }
 
-.contact__social-link i {
-    font-size: 2rem; 
-    margin-bottom: 8px; 
+.social-aria a:hover {
+    color: #123f24; /* Highlight color on hover */
 }
 
-.contact__social-link span {
-    font-size: 1rem; 
-    color: #555; 
+/* Adjust for dark background if needed */
+body.white-bg #contact .social-aria a {
+    color: black;
 }
 
-.contact__social-link:hover i {
-    color: #19994a; 
-    transform: scale(1.2);
+body.white-bg #contact .social-aria a:hover {
+    color: #123f24;
 }
 
-.contact__social-link:hover span {
-    color: #19994a; 
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .contact__social {
-        gap: 15px;
-    }
-
-    .contact__social-link i {
-        font-size: 1.5rem; 
-    }
-
-    .contact__social-link span {
-        font-size: 0.9rem; 
-    }
-    
-}
 
 /*::::::::::::::::::::::::::::::::::::
     Preloader
@@ -309,7 +266,7 @@ button:focus {
     bottom: 0;
     width: 50px;
     height: 5px;
-    background-color: #529777;
+    background-color: #000;
 }
 
 .section-title h2:before {
@@ -323,8 +280,8 @@ button:focus {
 /* General Navbar Styles */
 
 .navbar {
-    background-color: #123f24;
-    padding: 0;
+    background-color: #123f24; /* Dark background */
+    padding: 15px 20px;
 }
 
 .navbar .navbar-brand img {
@@ -335,7 +292,6 @@ button:focus {
     color: white;
     font-size: 16px;
     font-weight: bold;
-    padding: 15px 20px;
 }
 
 .navbar .nav-link:hover {
@@ -344,33 +300,22 @@ button:focus {
 
 /* Active State */
 .navbar .nav-item.active .nav-link {
-    color: #358053; 
-    font-weight: bold; 
+    color: #358053; /* Highlight active link */
+    font-weight: bold; /* Make it bold to stand out */
 }
 
 /* Mobile Menu (Hamburger) Button */
 .navbar-toggler {
-    border: none; 
-    background: #123f24;
-    cursor: pointer; 
-    padding: 10px; 
+    border: none;
 }
 
 .navbar-toggler:focus {
-    outline: none; 
+    outline: none;
 }
 
 .navbar-toggler .fa-bars {
-    color: #5cac7c; 
-    font-size: 24px; 
-}
-
-.navbar-toggler:hover .fa-bars {
-    color: #5cac7c; 
-}
-
-.navbar-toggler:active .fa-bars {
-    color: #1f5a33; 
+    color: rgb(0, 0, 0);
+    font-size: 24px;
 }
 
 /* Sidebar for Mobile */
@@ -401,11 +346,13 @@ button:focus {
         padding: 10px 20px;
     }
 
+    /* Push content to the left when sidebar is open */
     .navbar-collapse.collapse.show {
         right: 0;
     }
 }
 
+/* When sidebar is hidden, ensure it's off-screen on the right */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         right: -250px;
@@ -419,6 +366,7 @@ button:focus {
     } 
 }
 
+/* Main content pushed to the left when the sidebar is open */
 @media (max-width: 991.98px) {
     .navbar-collapse.show + .container-fluid {
         margin-right: 250px;
@@ -429,18 +377,6 @@ button:focus {
    Hero Area 
 ::::::::::::::::::::::::::::::::::::*/
 
-.home-section {
-    width: 100%;
-    transition: width 0.3s ease;
-}
-
-.menu-active .home-section {
-    width: calc(100% - 250px);
-}
-
-.hero-content h3{
-    color: #64b884;
-}
 .hero-aria,
 .hero-area-slids,
 .single-slider {
@@ -488,7 +424,7 @@ button:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #123f24;
+    background-color: #000;
     opacity: .3;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
     z-index: -1;
@@ -510,6 +446,60 @@ button:focus {
 
 .hero-content .button {
     margin-top: 30px;
+}
+
+/*::::::::::::::::::::::::::::::::::::
+   Featured Area
+::::::::::::::::::::::::::::::::::::*/
+
+.single-featured-item {
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.single-featured-item-wrap {
+    background-color: #fff;
+    box-shadow: 0 0 10px #eee;
+}
+
+.single-featured-item-wrap h3 a {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    color: #000;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.single-featured-item-wrap:hover a {
+    color:#123f24;
+}
+
+.single-featured-item-wrap:hover a:after {
+    height: 100%;
+}
+
+.single-featured-item-wrap h3 a:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.featured-icon {
+    font-size: 60px;
+    position: absolute;
+    top: 0;
+    color: #123f24;
+    opacity: .5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 
 
@@ -624,42 +614,9 @@ button:focus {
     transition: .5s;
 }
 
-.btn-box .btn {
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
-    overflow: hidden; 
+.btn-box .btn:hover{
+    color:#123f24f;
 }
- 
-/*View CV hover*/
-.btn-box .btn:hover {
-    color: #fff; 
-    background-color: #123f24; 
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-}
-
-.btn-box .btn:hover::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    animation: glow 0.6s forwards; 
-}
-
-@keyframes glow {
-    0% {
-        transform: translate(-50%, -50%) scale(0); 
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1); 
-    }
-}
-
 
 .skillbar {
     position: relative;
@@ -704,294 +661,236 @@ button:focus {
     line-height: 35px;
 }
 
-/* Tech Stack */
-.tech-stack .tech-logo {
-    width: 40px;
-    height: auto;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease; 
-}
-
-.tech-stack .tech-logo:hover {
-    animation: bounce 0.6s ease; 
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0); 
-    }
-    50% {
-        transform: translateY(-10px); 
-    }
-}
-
-.tech-stack p {
-    margin: 0;
-    font-size: 16px;
-}
-
-
+/* Style for .edu cards */
 .edu {
-    background-color: #53966e;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: #b2bbb6; 
+    color: white; 
+    position: relative; 
+    overflow: hidden; 
+    padding: 20px; 
+    border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(to bottom, #53966e 50%, #b2bbb6 50%);
-    background-size: 100% 200%;
-    background-position: top;
-    transition: background-position 0.4s ease-in-out, box-shadow 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .edu h3, .edu p, .edu span {
     color: rgb(0, 0, 0);
-    transition: color 0.3s ease;
 }
 
 .edu:hover {
-    background-position: bottom; 
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    background-color: #53966e; 
 }
 
-.edu:hover h3, .edu:hover p, .edu:hover span {
-    color: #333;
-}
-
-/* certificates */
-.cert{
+/* Certificates Section */
+.cert {
     padding-left: 1rem;
 }
-.slider{
+
+/* Slider Container */
+.slider {
     display: flex;
     padding: 0 35px;
     align-items: center;
     justify-content: center;
-  
-  }
-  
-  #right, #left{
-    color: rgb(14, 43, 11);
-  }
-  .wrapper{
+}
+
+/* Navigation Arrows */
+#right, #left {
+    color: #123f24;
+}
+
+/* Carousel Wrapper */
+.wrapper {
     display: flex;
     max-width: 1200px;
     position: relative;
-  }
-  .wrapper i{
+}
+
+/* Navigation Arrows Style */
+.wrapper i {
     top: 50%;
     height: 44px;
     width: 44px;
-    color: #ffffff;
+    color: #343F4F;
     cursor: pointer;
     font-size: 1.15rem;
     position: absolute;
     text-align: center;
     line-height: 44px;
-    background: rgb(59, 95, 59);
+    background: #fff;
     border-radius: 50%;
     transform: translateY(-50%);
-    transition: transform 0.1s linear;
-  }
-  .wrapper i:active{
+    transition: background 0.3s ease, transform 0.1s linear;
+}
+
+/* Active State of Navigation Arrows */
+.wrapper i:active {
     transform: translateY(-50%) scale(0.9);
-  }
-  .wrapper i:hover{
-    background: #689c63;
-  }
-  .wrapper i:first-child{
+}
+
+/* Hover State of Navigation Arrows */
+.wrapper i:hover {
+    background: #123f24;
+    color: #fff; /* Change text color on hover for better visibility */
+}
+
+/* First Arrow Position */
+.wrapper i:first-child {
     left: -22px;
-    display: none;
-  }
-  .wrapper i:last-child{
+    display: none; /* Optionally adjust visibility */
+}
+
+/* Last Arrow Position */
+.wrapper i:last-child {
     right: -22px;
-  }
-  .wrapper .carousel{
-    font-size: 0px;
+}
+
+/* Carousel Container */
+.wrapper .carousel {
+    font-size: 0;
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
-  }
-  
-  .carousel {
-      display: flex;
-      overflow-x: scroll;
-      white-space: nowrap;
-      border-radius: 10px;
-  }
-  .carousel.dragging{
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-radius: 10px;
+}
+
+/* Dragging State */
+.carousel.dragging {
     cursor: grab;
     scroll-behavior: auto;
-  }
-  .carousel.dragging img{
+}
+
+/* Carousel Images */
+.carousel.dragging img {
     pointer-events: none;
-  }
-  .carousel img{
+}
+
+.carousel img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
     width: auto;
     height: 340px;
     object-fit: cover;
     user-select: none;
     margin-left: 14px;
     width: calc(100% / 3);
-  }
-  .carousel img:first-child{
+}
+
+/* First Image Margin */
+.carousel img:first-child {
     margin-left: 0px;
-  }
-  
-  @media screen and (max-width: 900px) {
-    .carousel img{
-      width: calc(100% / 2);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 900px) {
+    .carousel img {
+        width: calc(100% / 2);
     }
-  }
-  
-  @media screen and (max-width: 550px) {
-    .carousel img{
-      width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+    .carousel img {
+        width: 100%;
     }
-  }
-  
-/*::::::::::::::::::::::::::::::::::::
-   Project Section
-::::::::::::::::::::::::::::::::::::*/
-#project {
-    background-color: #0e3b2c; 
-    padding: 60px 0;
 }
 
-.section__title {
-    color: #ffffff; 
-    font-size: 2.5rem; 
-    font-weight: bold;
-    text-align: center; 
-    margin-bottom: 40px; 
+/* Portfolio Section */
+.portfolio-area {
+    padding: 50px 0;
+    background-color: #234f1e; /* Dark green background */
 }
 
-.project__card {
-    background-color: #4b9c7f;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    overflow: hidden;
-    transition: transform 0.3s; 
+.portfolio-area .section-title {
+    margin-bottom: 30px;
 }
 
-.project__link {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem;
-    color: #000;
-    transition: transform 0.5s, box-shadow 0.3s;
-    height: 100%;
-    border-radius: 20px;
+.portfolio-area .single-portfolio {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    margin-bottom: 30px;
     position: relative;
-    text-decoration: none;
-    background-color: #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
-.project__link:hover {
-    transform: translateY(-1rem);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+.portfolio-area .single-portfolio:hover {
+    transform: scale(1.05);
 }
 
-.project__link:hover i {
-    transform: translateX(0.5rem);
-}
-
-.project__title {
-    color: #1e3a28; 
-    margin-bottom: 0.75rem;
-    font-family: 'Planet N Compact', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700; 
-}
-
-.project_description {
-    margin-bottom: 1.5rem;
-    text-align: justify;
-    color: #555;
-    font-weight: 400;
-    font-size: 1.1rem;
-}
-
-.project__link i {
+.portfolio-area .portfolio-hover {
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    color: #000; 
-    transition: transform 0.5s;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.project .container {
-    max-width: 1500px;
-    margin: 0 auto; 
+.portfolio-area .single-portfolio:hover .portfolio-hover {
+    opacity: 1;
 }
 
-.project__img {
+/* Carousel for Projects */
+.portfolio-carousel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 0 0 20px 20px;
-    height: auto;
-    transition: transform 0.3s; 
-}
-
-.project__img:hover {
-    transform: scale(1.05); 
-}
-
-.project__container {
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-box {
-    margin-top: 15px; 
-    text-align: center; 
-}
-
-.btn {
-    position: relative;
-    display: inline-flex;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 40px; 
-    background: #123f24; 
-    border: none; 
-    border-radius: .8rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    color: rgb(255, 255, 255);
-    z-index: 1;
-    overflow: hidden;
-    transition: background .5s, color .5s, transform .3s; 
-    outline: none;
-    cursor: pointer; 
 }
 
-.btn:hover {
-    background-color: #adabab; 
-    color: #123f24;
-    transform: translateY(-3px); 
+.portfolio-carousel img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.btn:active {
-    background-color: #6c757d; 
-    color: #123f24;
+.portfolio-carousel .carousel-nav {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
 }
 
-.btn:focus {
-    outline: none; 
-    box-shadow: none; 
+.portfolio-carousel .carousel-nav.prev {
+    left: 20px;
 }
 
+.portfolio-carousel .carousel-nav.next {
+    right: 20px;
+}
+
+.portfolio-carousel .close-carousel {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
 
 /*:::::::::::::::::::::::::::::::::::
         Footer Area
@@ -999,8 +898,8 @@ button:focus {
 
 .footer-area {
     padding: 30px;
-    background-color: #123f24;
-    border-bottom: 5px solid #535353;
+    background-color: #000;
+    border-bottom: 5px solid #123f24;
 }
 
 .copyright-text a {
@@ -1010,5 +909,5 @@ button:focus {
 }
 
 .copyright-text a:hover {
-    color: #3a3a3a;
+    color: #123f24;
 }
