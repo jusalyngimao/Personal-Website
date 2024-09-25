@@ -180,12 +180,12 @@ button:focus {
 }
 
 .contact__social-link:hover i {
-    color: #19994a; 
+    color: #598054; 
     transform: scale(1.2);
 }
 
 .contact__social-link:hover span {
-    color: #19994a; 
+    color: #4b4b4b; 
 }
 
 /* Responsive adjustments */
